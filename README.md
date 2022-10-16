@@ -3,7 +3,7 @@ This is a text-based pacman game I created, inspired by the pacman modules in th
 
 The game reads in a maze from a text file:
 
-# = Wall
+'#' = Wall
 P = Pacman
 . = Pellet
 G = Ghost
