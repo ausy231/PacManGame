@@ -15,7 +15,7 @@ class Maze:
         self.maze = maze
         self.base = []
         for row in maze:
-            self.base.append([c if c == self.WALL else self.SPACE for c in row])
+            self.base.append([c if c == self.WALL or c == "." else self.SPACE for c in row])
         pacman_pos, self.ghosts = self.analise()
         self.pacman = Pacman(x=pacman_pos[0], y=pacman_pos[1])
 
@@ -94,6 +94,7 @@ class Maze:
         self.pacman.set_pos(new_pos)
         if self.is_point(new_pos):
             self[new_pos] = self.PACMAN
+            self.base[new_pos[1]][new_pos[0]] = self.SPACE
             return True
 
         self[new_pos] = self.PACMAN
